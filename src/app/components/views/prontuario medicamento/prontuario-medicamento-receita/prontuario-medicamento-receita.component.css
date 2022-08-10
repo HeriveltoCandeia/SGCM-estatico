@@ -1,0 +1,59 @@
+.content{
+    width: 95%;
+    margin: 0 auto auto 0;
+}
+h1{
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+}
+.tabela{
+    width: 100%;
+}
+.tamanho-10{
+    width: 10%;
+}
+.edit{
+    color: rgb(1, 1, 141)
+}
+.delete{
+    color: rgb(124, 38, 38);
+    margin-left: 0.2rem;
+}
+table {
+    width: 100%;
+    border: 1px transparent;
+  }
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}  
+.filtro {
+    font-size: 14px;
+    width: 88%;
+    margin-left: 1rem;
+}
+.incluirMedicamento{
+    color: green;
+}
+.title{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;  
+}
+
+.noBorder{
+    border: 1px transparent;
+}
+
+.imgTit{
+    width: 100%; 
+    justify-content: center;
+}
+
+.descTit{
+    width: 80%; 
+    justify-content: center; 
+}

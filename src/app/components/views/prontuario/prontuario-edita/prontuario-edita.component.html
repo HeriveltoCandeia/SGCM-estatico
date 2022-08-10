@@ -1,0 +1,60 @@
+<div class="content">
+<div class="mat-elevation-z8">
+<form>
+    <h1>Dados Gerais</h1>
+</form>
+<form [formGroup]="formulario">
+    <mat-form-field class="form">
+        <mat-label>Médico</mat-label>
+        <mat-select [disabled] = true formControlName="codigoMedicoId" name="medicoSelecionado">
+                <mat-option value="0" selected>Selecione...</mat-option>
+                <mat-option *ngFor="let medico of medicos" [value]="medico.id">
+                    {{medico.nome}}
+                </mat-option>        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Cliente</mat-label>
+        <mat-select [disabled] = true formControlName="codigoClienteId" name="clienteSelecionado">
+                <mat-option value="0" selected>Selecione...</mat-option>
+                <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">
+                    {{cliente.nome}}
+                </mat-option>        
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Orientações</mat-label>
+        <textarea matInput formControlName="orientacoes" type="text" name="orientacoes"></textarea>
+    </mat-form-field>    
+
+    <div class="buttons">
+        <button class="mat-elevation-z8" (click)="cancelar()" mat-stroked-button color="warn">Voltar</button>
+        <button class="mat-elevation-z8" (click)="editar()" mat-stroked-button color="primary">Salvar</button>
+    </div>
+</form>
+</div>
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h1>Medicamentos</h1>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-prontuario-medicamento-lista></app-prontuario-medicamento-lista>
+    </mat-expansion-panel>
+    </mat-accordion>
+    
+    <mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h1>Exames</h1>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-prontuario-exame-lista></app-prontuario-exame-lista>
+    </mat-expansion-panel>
+    </mat-accordion>
+    
+
+</div>

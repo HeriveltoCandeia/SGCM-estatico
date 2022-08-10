@@ -1,0 +1,40 @@
+<div class="content">
+    <button class="mat-elevation-z8" (click)="abrirSolicitacaoExame()" mat-stroked-button color="warn">Gerar Solicitação</button>
+    <button class="mat-elevation-z8" (click)="incluirProntuarioExame()"mat-icon-button><mat-icon>add</mat-icon></button>
+    <div class="mat-elevation-z8 content-table">
+        <table class="tabela" mat-table [dataSource]="dataSource">
+     
+            <ng-container matColumnDef="exame">
+              <th mat-header-cell *matHeaderCellDef> Exame </th>
+              <td mat-cell *matCellDef="let row"> {{ row.exame.descricao }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="orientacoes">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear> Orientações </th>
+              <td mat-cell *matCellDef="let row"> {{ row.orientacoes}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="resultado">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear> Resultado </th>
+              <td mat-cell *matCellDef="let row"> {{ row.resultado}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="acoes">
+              <th class="tamanho-10" mat-header-cell *matHeaderCellDef> Ações </th>
+              <td mat-cell *matCellDef="let row">
+                <a class="edit" *ngIf="habilitarIncluir" routerLink="editaExames/{{ row.id }}">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a class="delete" *ngIf="habilitarIncluir" routerLink="excluiExames/{{ row.id }}">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>            
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10]"showFirstLastButtons 
+        aria-label="Select page of periodic elements">
+        </mat-paginator>          
+    </div>
+</div>

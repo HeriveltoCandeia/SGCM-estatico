@@ -1,0 +1,39 @@
+<div class="content">
+
+<form>
+    <h1>Dados Gerais</h1>
+</form>
+<form [formGroup]="formulario">
+
+    <mat-form-field class="form">
+        <mat-label>Exame</mat-label>
+        <mat-select [disabled]="disabled" formControlName="codigoExameId" name="exameSelecionado">
+                <mat-option value="0" selected>Selecione...</mat-option>
+                <mat-option *ngFor="let exame of exames" [value]="exame.id">
+                    {{exame.descricao}}
+                  </mat-option>        
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="disabled" class="form">
+        <mat-label>Orientações</mat-label>
+        <textarea matInput [value]="prontuarioExame.orientacoes" disabled='true'></textarea>
+    </mat-form-field>    
+
+    <mat-form-field *ngIf="!disabled" class="form">
+        <mat-label>Orientações</mat-label>
+        <textarea [disabled]="disabled" matInput formControlName="orientacoes" type="text" name="orientacoes"></textarea>
+    </mat-form-field>    
+
+    <mat-form-field class="form">
+        <mat-label>Resultado</mat-label>
+        <textarea matInput formControlName="resultado" type="text" name="resultado"></textarea>
+    </mat-form-field>    
+
+
+    <div class="buttons">
+        <button class="mat-elevation-z8" (click)="cancelar()" mat-stroked-button color="warn">Voltar</button>
+        <button class="mat-elevation-z8" (click)="editar()" mat-stroked-button color="primary">Salvar</button>
+    </div>
+</form>
+</div>

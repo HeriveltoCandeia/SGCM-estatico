@@ -1,0 +1,41 @@
+.content{
+    width: 95%;
+    margin: 0 auto auto 0;
+}
+h1{
+    text-align: left;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+}
+.tabela{
+    width: 100%;
+}
+.tamanho-10{
+    width: 10%;
+}
+.edit{
+    color: rgb(1, 1, 141)
+}
+.delete{
+    color: rgb(124, 38, 38);
+    margin-left: 0.2rem;
+}
+table {
+    width: 100%;
+  }
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}  
+.filtro {
+    font-size: 14px;
+    width: 88%;
+    margin-left: 1rem;
+}
+.incluirMedicamento{
+    color: green;
+}
+.content-table{
+    margin-top: 1rem;
+}

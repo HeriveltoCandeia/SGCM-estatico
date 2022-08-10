@@ -1,0 +1,32 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav mode="side"  disableClose class="mat-elevation-z8" [(opened)]="abreNavBar">
+        <mat-nav-list>
+            <a routerLink="" mat-list-item>
+                <i class="material-icons">home</i>
+                Home
+            </a>
+            <a routerLink="/agendas" mat-list-item>
+                <i class="material-icons">book</i>
+                Agenda
+            </a>
+            <a routerLink="/prontuarios" mat-list-item>
+                <i class="material-icons">book</i>
+                Prontuario
+            </a>
+            <i style="padding-left: 1.6rem; width: 5%;"class="material-icons">book</i>
+            <button style="font-size: 15px;" mat-button [matMenuTriggerFor]="cadastros">Cadastros</button>
+            <mat-menu #cadastros="matMenu">
+                <button routerLink="/clientes" mat-menu-item>Clientes</button>
+                <button routerLink="/funcionarios" mat-menu-item>Funcionários</button>
+                <button mat-menu-item [matMenuTriggerFor]="procedimentos">Procedimentos</button>
+            </mat-menu>
+            <mat-menu #procedimentos="matMenu">
+                <button routerLink="/exames" mat-menu-item>Exames</button>
+                <button routerLink="/medicamentos" mat-menu-item>Medicamentos</button>
+              </mat-menu>                        
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
